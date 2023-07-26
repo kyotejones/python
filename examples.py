@@ -27,13 +27,14 @@ def daysToUnits(intDays, strMessage):
 
 daysToUnits(10, "Awesome!") # calling the function we created
 daysToUnits(365, "Good To Go.") # calling the function we created
-
-
+# Functions should have two spaced before and after
+# Functions should have two spaced before and after
 ### Variable Scope
 def scopeFuncTest(intNumber):
     strTestScope="Testing" # This variable cannot be seen outside this function. Scope is limited.
     print(f"{strTestScope} {intNumber}")
-
+# Functions should have two spaced before and after
+# Functions should have two spaced before and after
 scopeFuncTest(20)
 
 
@@ -58,9 +59,21 @@ daysToUnits(int(strDays), f"This is {strDays} Days.") # We have to change strDay
 
 ### Conditionals
 intNumber01 = input("Give me a number.\n")
+print(intNumber01.isdigit())
 if int(intNumber01) > 10:
     print(f"{intNumber01} is greater than 10")
+elif int(intNumber01) == 0:
+    print("you entered a 0")
 else:
     print("Not greater than 10")
 
 
+### Exception Handling (Try/Except)
+intTryNumber = input("Exception: Give me a number\n")
+try:
+    if int(intTryNumber) > 0:
+        print(f"The number you gave is greater than 0: {intTryNumber}")
+    else:
+        print(f"The number you gave is less than or equal to 0: {intTryNumber}")
+except Exception:
+    print("What?! Something broke."
