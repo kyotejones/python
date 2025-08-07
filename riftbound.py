@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import http.client, urllib
 
-url = "https://www.gamenerdz.com/riftbound-league-of-legends-tcg-origins-booster-box-sealed-case-preorder"
+strUrl = "https://www.gamenerdz.com/riftbound-league-of-legends-tcg-origins-booster-box-sealed-case-preorder"
 strPushoverToken = os.environ["PUSHOVER_TOKEN"]
 strPushoverUser = os.environ["PUSHOVER_USER"]
 strMessage = "Riftbound is available for order"
@@ -18,7 +18,7 @@ def send_pushover_notification():
     }), { "Content-type": "application/x-www-form-urlencoded" })
     objConn.getresponse()
 
-response = requests.get(url)
+response = requests.get(strUrl)
 soup = BeautifulSoup(response.text, "html.parser")
 availability = soup.find(string="Set Restock Notification")
 
