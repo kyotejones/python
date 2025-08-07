@@ -1,4 +1,4 @@
-import requests
+import http.client, urllib
 
 # Pushover API URL: https://api.pushover.net/1/messages.json
 # token - your application's API token (required)
@@ -10,15 +10,16 @@ strPushoverToken = ""
 strPushoverUser = ""
 strMessage = "Testing Pushover notification from Python script"
 
-# Python script to send a Pushover notification
-def send_pushover_notification(token, user, message):
-    url = "https://api.pushover.net/1/messages.json"
-    data = {
-        "token": token,
-        "user": user,
-        "message": message
-    }
-    response = requests.post(url, data=data)
-    return response.json()
+# function to send Pushover notification
+def send_pushover_notification():
+    objConn = http.client.HTTPSConnection("api.pushover.net:443")
+    objConn.request("POST", "/1/messages.json",
+    urllib.parse.urlencode({
+        "token": strPushoverToken,
+        "user": strPushoverUser,
+        "message": strMessage,
+    }), { "Content-type": "application/x-www-form-urlencoded" })
+    objConn.getresponse()
 
-send_pushover_notification(strPushoverToken, strPushoverUser, strMessage)
+# call the function to send the notification
+send_pushover_notification()
