@@ -16,7 +16,7 @@ def main():
     response.raise_for_status()
     data = response.json()
 
-    print(json.dumps(data, indent=2))
+    #print(json.dumps(data, indent=2))
 
     # Search for regex "magic.*gathering" in the results
     pattern = re.compile(r"magic.*gathering", re.IGNORECASE)
