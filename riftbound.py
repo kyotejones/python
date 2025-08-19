@@ -4,6 +4,8 @@ from bs4 import BeautifulSoup
 import http.client, urllib
 import syslog
 
+# Price: 539.97 (08/14/2025)
+
 strUrl = "https://www.gamenerdz.com/riftbound-league-of-legends-tcg-origins-booster-box-sealed-case-preorder"
 #strUrl = "https://www.gamenerdz.com/magic-the-gathering-innistrad-crimson-vow-set-booster-box"
 strPushoverToken = os.environ["PUSHOVER_TOKEN"]
