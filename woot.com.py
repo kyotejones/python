@@ -25,8 +25,7 @@ def main():
     #print(json.dumps(data, indent=2))
 
     # Search for regex "magic.*gathering" in the results
-    #pattern = re.compile(r"magic.*gathering", re.IGNORECASE)
-    pattern = re.compile(r"External.*DVD", re.IGNORECASE)
+    pattern = re.compile(r"magic.*gathering", re.IGNORECASE)
     matches = []
     str_message = ""
 
